@@ -38,10 +38,10 @@
                 </li>
             </ul>
         </div>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
     </nav>
+
+
+
     <div class="container landing d-flex justify-content-center flex-column align-items-center" id="landing">
         <div class="row mx-auto">
             <h4 class="display-4 font-weight-bold mx-auto text-center">Hello, I'm Marco!</h4>
@@ -49,6 +49,7 @@
         <div class="row mx-auto">
             <h5 class="display-5 mx-auto faded text-center">I'm an Information Science & Technology Student at Temple
                 University College of Science and Technology</h5>
+                
         </div>
         <div class="row my-4">
             <div class="col my-3"><img src="images/angular.jpg" class="lang" data-toggle="tooltip" data-placement="top"
@@ -95,7 +96,7 @@
         </div>
         
         <div class="row row-col-1 row-cols-my-3 g-4">
-            <div class="card col-auto mb-4 my-3 bg-light " style="width: 18rem;">
+            <div class="card col-auto mb-4 my-3 bg-light border-success" style="width: 18rem;">
                 <h5 class="card-header text-center">Crit Moves Conversational Tool</h5>
                 <p class=" card-text text-justify">Developing a conversational web application for Tyler School of Art and Architecture 
                     to raise engagement among aspiring art students on studio courses.  
@@ -104,7 +105,7 @@
                     As a group, we utilized an Object-Oriented Software Development Lifecycle approach which include Unified Modeling Language tools such as Activity Diagrams, 
                     Use Cases, User Stories, and Data models to easily visualize the workflow and timeline of the project  </p>
             </div>
-            <div class="card col-auto mb-4 my-3 bg-light"style="width: 18rem;">
+            <div class="card col-auto mb-4 my-3 bg-light border-success"style="width: 18rem;">
                 <h5 class="card-header text-center">Live Stream and IT Technical Director</h5>
                 <p class="text-justify">Coordinate sermons streams in social media.
                     Creates slides to prepare for future praise and worship and sermons.
@@ -112,7 +113,7 @@
                     Work with other departments to improve the viewing experience both in person and on live stream.</p>
             
             </div>
-            <div class="card col-auto mb-4 my-3 bg-light"style="width: 18rem;">
+            <div class="card col-auto mb-4 my-3 bg-light border-success"style="width: 18rem;">
                 <h5 class="card-header text-center">Research Assistant</h5>
                 <p class="text-justify">Research and equity for education equity.
                     Plans trips with other coordinators and youth researchers and perform speeches in various conferences throughout the northeast coast.
@@ -183,6 +184,10 @@
                     data-toggle="tooltip" data-placement="top" title="Github"></i></a>
 
         </div>
+        
+        <div class="progress" style="height: 1px;"></div>
+            <div class="progress-bar progress-bar-striped stripped bg-success"></div>
+        </div>
         <div class="row mt-5">
             <a href="#landing"><button type="button" class="btn btn-outline">Return to Top</button></a>
         </div>
@@ -199,6 +204,28 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
     <script>
+        var i = 0;
+        var random;
+      	var bar = document.querySelector(".progress-bar");
+        
+        function makeProgress(){
+            setInterval(function(){
+                random = Math.floor(Math.random() * 10);
+                },) 
+                if(i < 100){
+                i = i + 1;
+
+                if(random == 9){
+                    i = Math.floor(i * 0.5);
+                }
+              	bar.style.width = i + "%";
+              	bar.innerText = i + "%";
+                }
+                setTimeout("makeProgress()", 100);
+            }
+
+            // Wait for sometime before running this script again
+        makeProgress();
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         })
