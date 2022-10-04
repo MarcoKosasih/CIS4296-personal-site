@@ -184,14 +184,15 @@
                     data-toggle="tooltip" data-placement="top" title="Github"></i></a>
 
         </div>
-        
-        <div class="progress" style="height: 1px;"></div>
-            <div class="progress-bar progress-bar-striped stripped bg-success"></div>
-        </div>
-        <div class="row mt-5">
+
+        <div class="row mt-5" style="float:none">
             <a href="#landing"><button type="button" class="btn btn-outline">Return to Top</button></a>
         </div>
     </div>
+
+    <div class="row mt-5 next progress" style="height: 1px;"></div>
+    <div class="progress-bar progress-bar-striped stripped bg-success"></div>
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -215,8 +216,18 @@
                 if(i < 100){
                 i = i + 1;
 
-                if(random == 9){
+                if(random == 4){
                     i = Math.floor(i * 0.5);
+                }
+                else if(random == 9){
+                    i = i - 5;
+                }
+                else if(i < 0){
+                    i = 80;
+                }
+                else if(i >= 100){
+                    window.confirm("Progress Bar reach 100%! Congratulations");
+
                 }
               	bar.style.width = i + "%";
               	bar.innerText = i + "%";
